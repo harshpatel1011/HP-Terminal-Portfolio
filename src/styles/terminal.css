@@ -1,0 +1,884 @@
+/* ============================================================
+   terminal.css  —  All terminal-specific styles
+   Design tokens live as CSS custom properties on each theme.
+   ============================================================ */
+
+/* ─── Google Font ─────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap");
+
+/* ─── Theme: Dark (GitHub Dark — default) ────────────────── */
+.theme-dark {
+  --bg-terminal:    #0d1117;
+  --bg-body:        #161b22;
+  --bg-titlebar:    #1c2128;
+  --bg-app-from:    #0d2137;
+  --bg-app-to:      #000000;
+  --border:         #30363d;
+  --text-primary:   #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted:     #484f58;
+  --color-prompt:   #58a6ff;
+  --color-heading:  #79c0ff;
+  --color-success:  #3fb950;
+  --color-error:    #f85149;
+  --color-info:     #a5d6ff;
+  --color-warn:     #e3b341;
+  --color-accent:   #bc8cff;
+  --color-chip-bg:  #21262d;
+  --color-chip-text:#79c0ff;
+  --color-ascii:    #39d353;
+  --scrollbar-bg:   #161b22;
+  --scrollbar-thumb:#30363d;
+  --dot-red:        #ff5f57;
+  --dot-yellow:     #febc2e;
+  --dot-green:      #28c840;
+  --shadow:         0 24px 64px rgba(0,0,0,0.6);
+}
+
+/* ─── Theme: Light ────────────────────────────────────────── */
+.theme-light {
+  --bg-terminal:    #f6f8fa;
+  --bg-body:        #ffffff;
+  --bg-titlebar:    #eaeef2;
+  --bg-app-from:    #dbeafe;
+  --bg-app-to:      #f8fafc;
+  --border:         #d0d7de;
+  --text-primary:   #1f2328;
+  --text-secondary: #57606a;
+  --text-muted:     #9198a1;
+  --color-prompt:   #0969da;
+  --color-heading:  #0550ae;
+  --color-success:  #1a7f37;
+  --color-error:    #cf222e;
+  --color-info:     #0969da;
+  --color-warn:     #9a6700;
+  --color-accent:   #8250df;
+  --color-chip-bg:  #ddf4ff;
+  --color-chip-text:#0969da;
+  --color-ascii:    #1a7f37;
+  --scrollbar-bg:   #f6f8fa;
+  --scrollbar-thumb:#d0d7de;
+  --dot-red:        #ff5f57;
+  --dot-yellow:     #febc2e;
+  --dot-green:      #28c840;
+  --shadow:         0 24px 64px rgba(0,0,0,0.12);
+}
+
+/* ─── Theme: Dracula ─────────────────────────────────────── */
+.theme-dracula {
+  --bg-terminal:    #282a36;
+  --bg-body:        #21222c;
+  --bg-titlebar:    #191a21;
+  --bg-app-from:    #1a1b26;
+  --bg-app-to:      #0d0e17;
+  --border:         #44475a;
+  --text-primary:   #f8f8f2;
+  --text-secondary: #6272a4;
+  --text-muted:     #44475a;
+  --color-prompt:   #bd93f9;
+  --color-heading:  #ff79c6;
+  --color-success:  #50fa7b;
+  --color-error:    #ff5555;
+  --color-info:     #8be9fd;
+  --color-warn:     #ffb86c;
+  --color-accent:   #ff79c6;
+  --color-chip-bg:  #44475a;
+  --color-chip-text:#bd93f9;
+  --color-ascii:    #50fa7b;
+  --scrollbar-bg:   #21222c;
+  --scrollbar-thumb:#44475a;
+  --dot-red:        #ff5555;
+  --dot-yellow:     #ffb86c;
+  --dot-green:      #50fa7b;
+  --shadow:         0 24px 64px rgba(0,0,0,0.7);
+}
+
+/* ─── Theme: Espresso ────────────────────────────────────── */
+.theme-espresso {
+  --bg-terminal:    #110b11;
+  --bg-body:        #1c1318;
+  --bg-titlebar:    #0a0508;
+  --bg-app-from:    #200d20;
+  --bg-app-to:      #000000;
+  --border:         #3b2c3b;
+  --text-primary:   #e0e0e0;
+  --text-secondary: #a89090;
+  --text-muted:     #5a4a5a;
+  --color-prompt:   #f0a500;
+  --color-heading:  #ff6eb4;
+  --color-success:  #00c896;
+  --color-error:    #ff4f4f;
+  --color-info:     #8be9fd;
+  --color-warn:     #f0a500;
+  --color-accent:   #ff33cc;
+  --color-chip-bg:  #2e1e2e;
+  --color-chip-text:#ff33cc;
+  --color-ascii:    #00c896;
+  --scrollbar-bg:   #1c1318;
+  --scrollbar-thumb:#3b2c3b;
+  --dot-red:        #ff5f57;
+  --dot-yellow:     #febc2e;
+  --dot-green:      #28c840;
+  --shadow:         0 24px 64px rgba(0,0,0,0.8);
+}
+
+/* ─── Theme: Green Goblin (Matrix) ──────────────────────── */
+.theme-green-goblin {
+  --bg-terminal:    #001100;
+  --bg-body:        #000d00;
+  --bg-titlebar:    #000800;
+  --bg-app-from:    #001a00;
+  --bg-app-to:      #000000;
+  --border:         #003300;
+  --text-primary:   #00ff00;
+  --text-secondary: #00bb00;
+  --text-muted:     #007700;
+  --color-prompt:   #00ff41;
+  --color-heading:  #00ff41;
+  --color-success:  #00ff00;
+  --color-error:    #ff0000;
+  --color-info:     #00dd00;
+  --color-warn:     #aaff00;
+  --color-accent:   #00ff41;
+  --color-chip-bg:  #001a00;
+  --color-chip-text:#00ff00;
+  --color-ascii:    #00ff41;
+  --scrollbar-bg:   #000d00;
+  --scrollbar-thumb:#003300;
+  --dot-red:        #ff0000;
+  --dot-yellow:     #aaff00;
+  --dot-green:      #00ff00;
+  --shadow:         0 24px 64px rgba(0,255,0,0.1);
+}
+
+/* ─── Theme: Ubuntu ──────────────────────────────────────── */
+.theme-ubuntu {
+  --bg-terminal:    #300a24;
+  --bg-body:        #250a1e;
+  --bg-titlebar:    #1a0818;
+  --bg-app-from:    #3d0b2e;
+  --bg-app-to:      #0d0009;
+  --border:         #5e2750;
+  --text-primary:   #eeeeec;
+  --text-secondary: #c8b8c2;
+  --text-muted:     #7a5a70;
+  --color-prompt:   #8ae234;
+  --color-heading:  #ad7fa8;
+  --color-success:  #8ae234;
+  --color-error:    #ef2929;
+  --color-info:     #729fcf;
+  --color-warn:     #edd400;
+  --color-accent:   #ad7fa8;
+  --color-chip-bg:  #5e2750;
+  --color-chip-text:#eeeeec;
+  --color-ascii:    #8ae234;
+  --scrollbar-bg:   #250a1e;
+  --scrollbar-thumb:#5e2750;
+  --dot-red:        #ef2929;
+  --dot-yellow:     #edd400;
+  --dot-green:      #8ae234;
+  --shadow:         0 24px 64px rgba(0,0,0,0.75);
+}
+
+/* ─── Theme: Blue Matrix ─────────────────────────────────── */
+.theme-blue-matrix {
+  --bg-terminal:    #0d1117;
+  --bg-body:        #0a0e19;
+  --bg-titlebar:    #060911;
+  --bg-app-from:    #000d2e;
+  --bg-app-to:      #000000;
+  --border:         #1a2a4a;
+  --text-primary:   #70e2e2;
+  --text-secondary: #4a9eb5;
+  --text-muted:     #1e4a6a;
+  --color-prompt:   #00ffff;
+  --color-heading:  #00e5ff;
+  --color-success:  #00ffcc;
+  --color-error:    #ff3366;
+  --color-info:     #80d8ff;
+  --color-warn:     #ffea00;
+  --color-accent:   #00e5ff;
+  --color-chip-bg:  #0a1a2e;
+  --color-chip-text:#00ffff;
+  --color-ascii:    #00ffcc;
+  --scrollbar-bg:   #0a0e19;
+  --scrollbar-thumb:#1a2a4a;
+  --dot-red:        #ff3366;
+  --dot-yellow:     #ffea00;
+  --dot-green:      #00ffcc;
+  --shadow:         0 24px 64px rgba(0,22,77,0.8);
+}
+
+/* ─── Wrapper ─────────────────────────────────────────────── */
+.terminal-wrapper {
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-terminal);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+  font-size: 0.86rem;
+  overflow: hidden;
+  transition: background 0.35s ease, border-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* ─── Title Bar ───────────────────────────────────────────── */
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: var(--bg-titlebar);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.titlebar-dots {
+  display: flex;
+  gap: 7px;
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+.dot-red    { background: var(--dot-red); }
+.dot-yellow { background: var(--dot-yellow); }
+.dot-green  { background: var(--dot-green); }
+
+.titlebar-title {
+  flex: 1;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Theme picker button + dropdown ─────────────────────── */
+.titlebar-theme-btn {
+  position: relative;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  transition: background 0.2s, border-color 0.2s;
+  color: var(--color-prompt);
+  white-space: nowrap;
+}
+.titlebar-theme-btn:hover {
+  background: var(--color-chip-bg);
+  border-color: var(--color-prompt);
+}
+
+/* Dropdown panel */
+.theme-switcher {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-titlebar);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 170px;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  animation: dropIn 0.15s ease;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.theme-switcher-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  padding: 2px 8px 5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3px;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  transition: background 0.15s, color 0.15s;
+}
+.theme-option:hover {
+  background: var(--color-chip-bg);
+  color: var(--text-primary);
+}
+.theme-option.active {
+  color: var(--color-prompt);
+  font-weight: 700;
+}
+
+.theme-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* container for the button so dropdown can be relative to it */
+.theme-btn-wrapper {
+  position: relative;
+}
+
+/* ─── Body / Scroll Area ──────────────────────────────────── */
+.terminal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 22px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  scroll-behavior: smooth;
+}
+
+/* custom scrollbar */
+.terminal-body::-webkit-scrollbar       { width: 6px; }
+.terminal-body::-webkit-scrollbar-track { background: var(--scrollbar-bg); }
+.terminal-body::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+
+/* ─── History entry ───────────────────────────────────────── */
+.history-entry {
+  margin-bottom: 10px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* echoed command line */
+.history-cmd {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+.history-cmd-text {
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+/* ─── Input line ──────────────────────────────────────────── */
+.input-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  cursor: text;
+}
+
+.input-prompt {
+  color: var(--color-prompt);
+  white-space: nowrap;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* The wrapper holds: typed text + blinking cursor, stacked as inline */
+.input-display-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Mirror span — sets width so cursor follows naturally */
+.input-mirror {
+  color: var(--text-primary);
+  white-space: pre;
+  letter-spacing: inherit;
+}
+
+/* Blinking cursor block */
+.input-cursor {
+  display: inline-block;
+  width: 9px;
+  height: 1.1em;
+  background: var(--color-prompt);
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Invisible real input — sits on top / syncs value only */
+.input-hidden {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: transparent;
+  caret-color: transparent;
+  cursor: text;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+
+/* ─── Output: Divider ─────────────────────────────────────── */
+.output-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 6px 0;
+}
+
+/* ─── Output: Blank ───────────────────────────────────────── */
+.output-blank {
+  height: 8px;
+}
+
+/* ─── Output: ASCII ───────────────────────────────────────── */
+.output-ascii {
+  color: var(--color-ascii);
+  font-size: 0.62rem;
+  line-height: 1.3;
+  margin: 0 0 4px;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* ─── Output: Heading ─────────────────────────────────────── */
+.output-heading {
+  color: var(--color-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 4px 0;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Output: Text ────────────────────────────────────────── */
+.output-text {
+  color: var(--text-primary);
+  margin: 2px 0;
+  line-height: 1.6;
+}
+
+/* ─── Output: Info ────────────────────────────────────────── */
+.output-info {
+  color: var(--color-info);
+  margin: 2px 0;
+  line-height: 1.6;
+}
+
+/* ─── Output: Success ─────────────────────────────────────── */
+.output-success {
+  color: var(--color-success);
+  margin: 2px 0;
+  font-weight: 600;
+}
+
+/* ─── Output: Error ───────────────────────────────────────── */
+.output-error {
+  color: var(--color-error);
+  margin: 2px 0;
+  font-weight: 600;
+}
+
+/* ─── Output: help — cmd rows ─────────────────────────────── */
+.output-cmd-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 2px 0;
+}
+.output-cmd-label {
+  color: var(--color-accent);
+  font-weight: 600;
+  min-width: 130px;
+}
+.output-cmd-sep {
+  color: var(--text-muted);
+}
+.output-cmd-desc {
+  color: var(--text-secondary);
+}
+
+/* ─── Output: skills ──────────────────────────────────────── */
+.output-skill-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 5px 0;
+  flex-wrap: wrap;
+}
+.output-skill-category {
+  color: var(--color-accent);
+  font-weight: 700;
+  min-width: 150px;
+  flex-shrink: 0;
+}
+.output-skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.output-skill-chip {
+  background: var(--color-chip-bg);
+  color: var(--color-chip-text);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition: transform 0.15s;
+}
+.output-skill-chip:hover {
+  transform: translateY(-1px);
+}
+
+/* ─── Output: projects ────────────────────────────────────── */
+.output-project-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 8px 0;
+  background: var(--bg-body);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.output-project-card:hover {
+  border-color: var(--color-prompt);
+  transform: translateX(3px);
+}
+.output-project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.output-project-name {
+  color: var(--color-heading);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.output-project-status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  letter-spacing: 0.06em;
+}
+.status-live {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+.status-wip {
+  background: rgba(227, 179, 65, 0.15);
+  color: var(--color-warn);
+  border: 1px solid var(--color-warn);
+}
+.output-project-desc {
+  color: var(--text-secondary);
+  margin: 4px 0 8px;
+  line-height: 1.55;
+  font-size: 0.83rem;
+}
+.output-project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+.output-tech-chip {
+  background: var(--color-chip-bg);
+  color: var(--color-chip-text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 8px;
+  font-size: 0.73rem;
+}
+.output-project-link {
+  color: var(--color-prompt);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: text-decoration 0.15s;
+}
+.output-project-link:hover {
+  text-decoration: underline;
+}
+
+/* ─── Output: experience ──────────────────────────────────── */
+.output-exp-card {
+  border-left: 3px solid var(--color-accent);
+  padding: 8px 16px;
+  margin: 8px 0;
+  background: var(--bg-body);
+  border-radius: 0 6px 6px 0;
+}
+.output-exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.output-exp-role {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+.output-exp-period {
+  color: var(--color-warn);
+  font-size: 0.78rem;
+}
+.output-exp-company {
+  color: var(--color-accent);
+  font-size: 0.83rem;
+  display: block;
+  margin: 2px 0 6px;
+}
+.output-exp-points {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 0.83rem;
+}
+.output-exp-points li::marker { color: var(--color-success); }
+
+/* ─── Output: education ───────────────────────────────────── */
+.output-edu-card {
+  border-left: 3px solid var(--color-info);
+  padding: 8px 16px;
+  margin: 8px 0;
+  background: var(--bg-body);
+  border-radius: 0 6px 6px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.output-edu-degree {
+  color: var(--color-heading);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.output-edu-institute {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+.output-edu-meta {
+  display: flex;
+  gap: 18px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+.output-edu-grade {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+/* ─── Output: contact ─────────────────────────────────────── */
+.output-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+}
+.output-contact-icon { font-size: 1rem; }
+.output-contact-label {
+  color: var(--color-accent);
+  font-weight: 600;
+  min-width: 80px;
+}
+.output-contact-value { color: var(--text-primary); }
+
+/* ─── Output: social links ────────────────────────────────── */
+.output-link-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+}
+.output-link {
+  color: var(--color-prompt);
+  text-decoration: none;
+  font-weight: 600;
+  min-width: 110px;
+}
+.output-link:hover { text-decoration: underline; }
+.output-link-url {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+/* ─── Output: theme list row ──────────────────────────────── */
+.output-theme-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 0;
+  font-size: 0.83rem;
+}
+.output-theme-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 4px rgba(255,255,255,0.1);
+}
+.output-theme-name {
+  color: var(--text-primary);
+  min-width: 100px;
+  font-weight: 500;
+}
+.output-theme-active {
+  color: var(--color-prompt);
+  font-weight: 700;
+}
+.output-theme-id {
+  color: var(--text-muted);
+  font-size: 0.77rem;
+}
+.output-theme-check {
+  color: var(--color-success);
+  font-size: 0.77rem;
+  font-style: italic;
+}
+
+/* ─── Welcome screen ─────────────────────────────────────── */
+.welcome-banner {
+  margin-bottom: 4px;
+}
+
+.welcome-ascii {
+  color: var(--color-ascii);
+  font-size: 0.6rem;
+  line-height: 1.25;
+  white-space: pre;
+  overflow-x: auto;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.welcome-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.welcome-name {
+  color: var(--color-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.welcome-role {
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* info table row */
+.welcome-info-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  padding: 2px 0;
+  font-size: 0.84rem;
+}
+
+.welcome-info-label {
+  color: var(--color-heading);
+  font-weight: 700;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.welcome-info-sep {
+  color: var(--text-muted);
+  margin-right: 12px;
+}
+
+.welcome-info-value {
+  color: var(--text-primary);
+}
+
+.welcome-info-link {
+  color: var(--color-prompt);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.welcome-info-link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* tip line */
+.welcome-tip {
+  color: var(--color-info);
+  font-size: 0.82rem;
+  margin: 1px 0;
+  line-height: 1.6;
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .terminal-wrapper {
+    max-height: 100vh;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .terminal-body {
+    padding: 12px 14px 10px;
+  }
+  .output-ascii {
+    font-size: 0.42rem;
+  }
+  .output-skill-group {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .output-exp-header {
+    flex-direction: column;
+  }
+}

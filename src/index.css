@@ -1,0 +1,69 @@
+/* ─── Global Reset & Base ─────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "JetBrains Mono", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* ─── App Root (base) ─────────────────────────────────────── */
+.app-root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: background 0.4s ease;
+}
+
+/* ─── Per-theme app backgrounds (hardcoded, no CSS var deps) ─ */
+.app-root.theme-dark {
+  background: radial-gradient(ellipse at 20% 50%, #0d2137 0%, #0a0e17 60%, #000000 100%);
+}
+.app-root.theme-light {
+  background: radial-gradient(ellipse at 20% 50%, #dbeafe 0%, #eff6ff 60%, #f8fafc 100%);
+}
+.app-root.theme-dracula {
+  background: radial-gradient(ellipse at 20% 50%, #1a1b26 0%, #12131a 60%, #0d0e17 100%);
+}
+.app-root.theme-espresso {
+  background: radial-gradient(ellipse at 20% 50%, #200d20 0%, #140810 60%, #000000 100%);
+}
+.app-root.theme-green-goblin {
+  background: radial-gradient(ellipse at 20% 50%, #001a00 0%, #000d00 60%, #000000 100%);
+}
+.app-root.theme-ubuntu {
+  background: radial-gradient(ellipse at 20% 50%, #3d0b2e 0%, #250a1e 60%, #0d0009 100%);
+}
+.app-root.theme-blue-matrix {
+  background: radial-gradient(ellipse at 20% 50%, #000d2e 0%, #05091a 60%, #000000 100%);
+}
+
+/* ─── Selection styling ───────────────────────────────────── */
+::selection {
+  background: #58a6ff33;
+  color: inherit;
+}
+
+/* ─── Scrollbar (global) ──────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
