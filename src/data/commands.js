@@ -359,6 +359,7 @@ const WELCOME_OUTPUT = [
   { type: "welcome-info", label: "Role", value: "Full-Stack Developer" },
   { type: "welcome-info", label: "Location", value: "Ahmedabad, Gujarat, India" },
   { type: "welcome-info", label: "GitHub", value: "github.com/harshpatel1011", link: "https://github.com/harshpatel1011" },
+  { type: "welcome-info", label: "LinkedIn", value: "linkedin.com/in/harshpatel1111", link: "https://www.linkedin.com/in/harshpatel1111/" },
   { type: "welcome-info", label: "Email", value: "harshpatel6342@gmail.com" },
   { type: "blank" },
   { type: "welcome-tip", text: 'Type "help" for a list of available commands.' },
