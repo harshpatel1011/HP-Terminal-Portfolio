@@ -220,7 +220,7 @@ export const COMMANDS = {
       type: "link",
       icon: "💼",
       label: "LinkedIn",
-      url: "-",
+      url: "https://www.linkedin.com/in/harshpatel1111/",
     },
     {
       type: "link",
